@@ -20,10 +20,10 @@ class FoodAdapter(private val context:Context, private var foodList: ArrayList<F
 
     override fun onBindViewHolder(holder: FoodViewHolder, position: Int) {
         val food = foodList[position]
-        holder.name.text=food.name
-        holder.price.text=food.price.toString()
+        holder.name.text=food.title
+        holder.price.text=food.id.toString()
         Glide.with(context)
-            .load(food.image)
+            .load(food.url)
             .into(holder.image)
     }
 
